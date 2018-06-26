@@ -1,38 +1,29 @@
 <template>
     <main class="carousel">
-       <h1>This is where the carousel of events will live</h1>
+       <h2>Events</h2>
       <b-modal 
-             :header-bg-variant="headerBgVariant"
              :hide-footer="true"
-             :body-bg-variant="bodyBgVariant"
-             :body-text-variant="bodyTextVariant"
              size="lg"
              id="modal1">
            <EventModal />
         </b-modal>
         <b-modal 
-             :header-bg-variant="headerBgVariant"
              :hide-footer="true"
-             :body-bg-variant="bodyBgVariant"
-             :body-text-variant="bodyTextVariant"
              size="lg"
              id="modal2">
            <EventModal />
         </b-modal>
         <b-modal 
-             :header-bg-variant="headerBgVariant"
              :hide-footer="true"
-             :body-bg-variant="bodyBgVariant"
-             :body-text-variant="bodyTextVariant"
              size="lg"
              id="modal3">
            <EventModal />
         </b-modal>
        
-        <carousel-3d id="shorter" style="height:70%;" 
+        <carousel-3d id="carousel" style="height:70%;" 
         :controls-visible="true" 
         :autoplay="true"
-        :autoplayTimeout="4500"
+        :autoplayTimeout="8500"
         :controls-width="80"
         :height="325" 
         :width="390" 
@@ -76,5 +67,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+#carousel {
+  margin-top: 55px;
+  margin-bottom: 35px;
+}
+
+.slide {
+  border: none;
+  border-radius: 20px;
+}
+
+.slide:hover {
+  margin-top: 8px;
+}
 </style>
