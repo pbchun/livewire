@@ -35,7 +35,6 @@ export default {
         justify-content: center;
     }
     .available-date-cards {
-        border: 1px solid darkgray;
         margin: auto;
         margin-top: 3vh;
         padding-bottom: 2vh;
