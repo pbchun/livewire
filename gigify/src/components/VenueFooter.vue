@@ -11,6 +11,7 @@ export default {};
 <style>
 .venue-footer {
   position: absolute;
-  margin-bottom: 3px;
+  bottom: 3px;
+  margin-left: 30px;
 }
 </style>

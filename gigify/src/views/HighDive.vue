@@ -1,7 +1,7 @@
 <template>
   <div class="high-dive">
     <header>
-      <h1>This is High-Dive's Home Page</h1>
+      <h1>Welcome to The Hi-Dive</h1>
     </header>
     <EventSection />
     <VenueFooter />
