@@ -3,28 +3,33 @@
         <div class="available-date-cards">
             <b-card title="7/04/18">
                 <p class="card-text">Date Details</p>
-                <b-button vue-router="#" variant="primary">Request to book this date</b-button>
+                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay">Request to book this date</b-button>
             </b-card>
         </div>
         <div class="available-date-cards">
             <b-card title="7/10/18">
                 <p class="card-text">Date Details</p>
-                <b-button vue-router="#" variant="primary">Request to book this date</b-button>
+                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay">Request to book this date</b-button>
             </b-card>
         </div>
         <div class="available-date-cards">
             <b-card title="7/20/18">
                 <p class="card-text">Date Details</p>
-                <b-button vue-router="#" variant="primary">Request to book this date</b-button>
+                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay">Request to book this date</b-button>
             </b-card>
         </div>
     </section>
 </template>
 
 <script>
+import RequestDateForm from "@/components/RequestDateForm";
+
 export default {
   name: "available-date",
-  props: ["toggleDisplay"]
+  props: ["toggleDisplay"],
+  components: {
+      RequestDateForm
+  }
 };
 </script>
 
