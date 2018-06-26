@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import HighDive from './views/HighDive.vue'
 import ForArtists from './views/ForArtists.vue'
+import ForVenues from './views/ForVenues.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/ForArtists',
       name: 'for-artists',
       component: ForArtists
+    },
+    {
+      path: '/ForVenues',
+      name: 'for-venues',
+      component: ForVenues
     }
   ]
 })

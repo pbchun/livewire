@@ -6,7 +6,11 @@
     <main>
         <p>write some shit about this shit</p>
         <router-link to="/HighDive">Checkout wassup at High-Dive</router-link>
+       
     </main>
+    <footer>
+      <router-link to="/ForVenues">Venue Login</router-link>
+    </footer>
   </div>
 </template>
 

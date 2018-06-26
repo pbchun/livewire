@@ -2,7 +2,7 @@
     <div>
         <main>
             <VenueLogin :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
-            <ApproveEventSection :isDisplaying="isDisplaying" v-show="!isDisplaying" />
+            <ApproveEventSection :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
         </main>
         <footer>
           <router-link to="/">Home</router-link>
