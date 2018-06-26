@@ -9,6 +9,7 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.16",
+    "vue-carousel-3d": "^0.1.21",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
