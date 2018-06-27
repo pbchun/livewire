@@ -6,7 +6,7 @@
             <p>each date component will be dynamically generated via "v-for" in the AvailableDate component-element </p>
         </header>
         <section class="date-section">
-            <AvailableDate :toggleDisplay="toggleDisplay" />
+            <AvailableDate :toggleDisplay="toggleDisplay" :eventData="eventData" />
         </section>
     </div>
 </template>
@@ -19,7 +19,7 @@ export default {
   components: {
     AvailableDate
   },
-  props: ["isDisplaying", "toggleDisplay", "API", "availableDates"],
+  props: ["isDisplaying", "toggleDisplay", "API", "availableDates", "eventData"],
   methods: {}
 };
 </script>

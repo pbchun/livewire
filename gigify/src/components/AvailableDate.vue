@@ -1,21 +1,9 @@
 <template>
     <section class="available-dates">
-        <div class="available-date-cards">
-            <b-card title="7/04/18">
-                <p class="card-text">Date Details</p>
-                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay">Request to book this date</b-button>
-            </b-card>
-        </div>
-        <div class="available-date-cards">
-            <b-card title="7/10/18">
-                <p class="card-text">Date Details</p>
-                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay">Request to book this date</b-button>
-            </b-card>
-        </div>
-        <div class="available-date-cards">
-            <b-card title="7/20/18">
-                <p class="card-text">Date Details</p>
-                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay">Request to book this date</b-button>
+        <div class="available-date-cards" v-for="event in eventData[0].events" v-bind:key="event.date">
+            <b-card>
+                <p class="card-text">{{event.date}} at {{event.venue}}</p>
+                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay" showDate="event.date">Request to book this date</b-button>
             </b-card>
         </div>
     </section>
@@ -25,25 +13,30 @@
 import RequestDateForm from "@/components/RequestDateForm";
 
 export default {
-  name: "available-date",
-  props: ["toggleDisplay"],
-  components: {
-      RequestDateForm
-  }
+    name: "available-date",
+    props: ["toggleDisplay", "eventData"],
+    components: {
+        RequestDateForm
+    }, 
+    data() {
+        return {
+            showDate: ""
+        }
+    }
 };
 </script>
 
 <style>
-    .available-dates {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .available-date-cards {
-        margin: auto;
-        margin-top: 3vh;
-        padding-bottom: 2vh;
-        padding-left: 2vh;
-        padding-right: 2vh;
-    }
+.available-dates {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.available-date-cards {
+    margin: auto;
+    margin-top: 3vh;
+    padding-bottom: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
 </style>
