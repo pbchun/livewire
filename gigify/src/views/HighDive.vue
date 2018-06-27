@@ -3,7 +3,7 @@
     <header>
       <h1>Welcome to The Hi-Dive</h1>
     </header>
-    <EventSection :testing="proptest()" />
+    <EventSection :eventData="eventData" :testing="proptest()" />
     <VenueFooter />
   </div>
 </template>
@@ -20,6 +20,7 @@ export default {
   },
   data() {
     return {
+      eventData: [],
       API: {
         DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
         APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
@@ -31,6 +32,17 @@ export default {
     proptest() {
       console.log(this.API.DATE_LISTINGS);
     }
+  },
+  async mounted() {
+    Promise.all([
+      fetch(this.API.DATE_LISTINGS).then(res => res.json()),
+
+      fetch(this.API.APPROVED_SHOWS).then(res => res.json()),
+
+      fetch(this.API.REQUESTED_SHOWS).then(res => res.json())
+    ]).then(res => {
+      this.eventData = res;
+    });
   }
 };
 </script>
