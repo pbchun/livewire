@@ -1,13 +1,29 @@
-<template>
+ <template>
     <main class="carousel">
        <h2>Events</h2>
-        <b-modal  
+      <b-modal 
              :hide-footer="true"
              size="lg"
+<<<<<<< HEAD
              id='modal1'>
            <EventModal :eventData="eventData" v-for="event in eventData[1].events" :key="event.id" />
+=======
+             id="modal1">
+           <EventModal />
         </b-modal>
-        
+        <b-modal 
+             :hide-footer="true"
+             size="lg"
+             id="modal2">
+           <EventModal />
+        </b-modal>
+        <b-modal 
+             :hide-footer="true"
+             size="lg"
+             id="modal3">
+           <EventModal />
+>>>>>>> master
+        </b-modal>
        
         <carousel-3d id="carousel" style="height:70%;" 
         :controls-visible="true" 
@@ -20,9 +36,13 @@
         :inverse-scaling="1000" :space="600"
         >
         <slide :index="eventData[1].events.indexOf(event)" v-for="event in eventData[1].events" :key="event.id">
+<<<<<<< HEAD
           <div v-b-modal.modal1>
              <Event :eventData="eventData" />
           </div> 
+=======
+          <Event :eventData="eventData[1].events[eventData[1].events.indexOf(event)]" />
+>>>>>>> master
         </slide> 
           <!-- <slide :index="1"  class="slide">
             <div v-b-modal.modal2>
@@ -54,8 +74,14 @@ export default {
     EventModal
   },
   props: ["eventData"],
-  methods: {
-    showModal() {}
+  data() {
+    return {
+      API: {
+        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+        APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
+        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+      }
+    };
   }
 };
 </script>
@@ -74,4 +100,4 @@ export default {
 .slide:hover {
   margin-top: 8px;
 }
-</style>
+</style> 
