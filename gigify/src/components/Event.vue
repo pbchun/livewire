@@ -19,43 +19,45 @@
 
 <script>
 export default {
-  props: ["eventData"]
+  props: ["eventData"],
+
 };
 </script>
 
 <style>
-.event-card {
-  color: white;
-  width: 390px;
-  height: 325px;
-  border-radius: 10px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.event-card img {
-  /* border-radius: 20px; */
-  flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-.cardText {
-  padding-top: 2em;
-  background-color: rgba(59, 59, 59, 0.4);
-  border-radius: 6px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  display: flex;
-  justify-content: left;
-  align-items: end;
-}
-.cardText div {
-  padding-left: 20px;
-}
-.cardText:hover {
-  background-color: rgba(59, 59, 59, 0.7);
-}
+    .event-card {
+        color: white;
+        width: 390px;
+        height: 325px;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .event-card img{
+        /* border-radius: 20px; */
+        flex-shrink: 0;
+        min-width: 100%;
+        min-height: 100%
+    }
+    .cardText {
+        padding-top: 2em;
+        background-color: rgba(59, 59, 59, 0.4);
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0px;
+        display: flex;
+        justify-content: left;
+        align-items: end;
+    }
+    .cardText div{
+        padding-left: 20px;
+    }
+    .cardText:hover{
+        background-color: rgba(59, 59, 59, 0.7);
+    }
+
 </style>
