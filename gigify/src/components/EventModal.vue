@@ -1,7 +1,7 @@
 <template>
    <div>
        <header>
-           <h1>I'm a modal, bitch</h1>
+           <h1>{{eventData[2].events[0].artist}}</h1>
        </header>
        <main>
            <p>this band sux. Def dont go</p>
@@ -11,3 +11,10 @@
        </footer>
    </div>
 </template>
+
+<script>
+export default {
+  props: ["eventData"]
+};
+</script>
+

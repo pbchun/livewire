@@ -1,7 +1,7 @@
 <template>
     <section class="event-card">
         <div class ='cardText'>
-            <h1 class='artistName'>Artist Name</h1>
+            <h1 class='artistName'>Artist</h1>
             <h2 class='dateOfEvent'>Jan 23 2125</h2>
             <p class='description'> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Iusto rem, voluptatum ipsam dolorum unde esse deleniti voluptates commodi et 
