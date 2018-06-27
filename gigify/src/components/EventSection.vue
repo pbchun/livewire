@@ -63,6 +63,15 @@ export default {
     Slide,
     BootstrapVue,
     EventModal
+  },
+  data() {
+    return {
+      API: {
+        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+        APPROVED_SHOWS: "",
+        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+      }
+    };
   }
 };
 </script>

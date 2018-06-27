@@ -37,7 +37,7 @@
 <script>
 export default {
   name: "request-date-form",
-  props: ["isDisplaying", "toggleDisplay"],
+  props: ["isDisplaying", "toggleDisplay", "API"],
   data() {
     return {
       request: {
@@ -48,9 +48,9 @@ export default {
         email: "",
         website: "",
         musicSample: "",
+        image: "",
         description: ""
-      },
-      API_URL: ""
+      }
     };
   },
   methods: {
@@ -65,11 +65,12 @@ export default {
         email: "",
         website: "",
         musicSample: "",
+        image: "",
         description: ""
       };
     },
     postRequest() {
-      return fetch(this.API_URL, {
+      return fetch(this.API.REQUESTED_SHOWS, {
         headers: {
           "content-type": "application/json"
         },
@@ -83,17 +84,13 @@ export default {
 
 <style>
 .requestForm {
-  
 }
 input {
   width: 50%;
 }
 #submitButton {
-  width:20%;
+  width: 20%;
 }
 button {
-  
 }
-
-
 </style>

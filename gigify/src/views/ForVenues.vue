@@ -23,7 +23,13 @@ export default {
   },
   data() {
     return {
-      isDisplaying: true
+      isDisplaying: true,
+
+      API: {
+        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+        APPROVED_SHOWS: "",
+        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+      }
     };
   },
   methods: {

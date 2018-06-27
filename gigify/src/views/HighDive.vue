@@ -3,7 +3,7 @@
     <header>
       <h1>Welcome to The Hi-Dive</h1>
     </header>
-    <EventSection />
+    <EventSection :testing="proptest()" />
     <VenueFooter />
   </div>
 </template>
@@ -17,6 +17,20 @@ export default {
   components: {
     VenueFooter,
     EventSection
+  },
+  data() {
+    return {
+      API: {
+        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+        APPROVED_SHOWS: "",
+        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+      }
+    };
+  },
+  methods: {
+    proptest() {
+      console.log(this.API.DATE_LISTINGS);
+    }
   }
 };
 </script>

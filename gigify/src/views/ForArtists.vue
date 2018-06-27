@@ -1,8 +1,8 @@
 <template>
     <div>
         <main>
-            <DateSection :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
-            <RequestDateForm :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
+            <DateSection :availableDates="availableDates" :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
+            <RequestDateForm :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
         </main>
     </div>
 </template>
@@ -19,7 +19,13 @@ export default {
   },
   data() {
     return {
-      isDisplaying: true
+      isDisplaying: true,
+      availableDates: [],
+      API: {
+        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+        APPROVED_SHOWS: "",
+        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+      }
     };
   },
   methods: {
