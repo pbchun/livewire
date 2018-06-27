@@ -68,7 +68,7 @@ export default {
     return {
       API: {
         DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
-        APPROVED_SHOWS: "",
+        APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
         REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
       }
     };
