@@ -1,7 +1,7 @@
 <template>
    <div>
        <header>
-           <h1>I'm a modal, bitch</h1>
+           <h1>{{eventData[2].events[0].artist}}</h1>
        </header>
        <main>
             <iframe 
@@ -15,3 +15,10 @@
        </footer>
    </div>
 </template>
+
+<script>
+export default {
+  props: ["eventData"]
+};
+</script>
+
