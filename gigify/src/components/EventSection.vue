@@ -1,11 +1,11 @@
 <template>
     <main class="carousel">
        <h2>Events</h2>
-        <b-modal  
+        <b-modal 
              :hide-footer="true"
              size="lg"
              id='modal1'>
-           <EventModal :eventData="eventData" v-for="event in eventData[1].events" :key="event.id" />
+           <EventModal :eventData="eventData"  />
         </b-modal>
         
        
@@ -53,10 +53,7 @@ export default {
     BootstrapVue,
     EventModal
   },
-  props: ["eventData"],
-  methods: {
-    showModal() {}
-  }
+  props: ["eventData"]
 };
 </script>
 
