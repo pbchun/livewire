@@ -30,12 +30,10 @@
         :clickable="true"
         :inverse-scaling="1000" :space="600"
         >
-        <slide :index="0"  class="slide">
-            <div v-b-modal.modal1>
-             <Event />
-            </div> 
-          </slide>
-          <slide :index="1"  class="slide">
+        <slide :index="eventData[1].events.indexOf(event)" v-for="event in eventData[1].events" :key="event.id">
+          <Event :eventData="eventData" />
+        </slide> 
+          <!-- <slide :index="1"  class="slide">
             <div v-b-modal.modal2>
               <Event />
             </div> 
@@ -44,7 +42,7 @@
             <div v-b-modal.modal3>
               <Event />
             </div>
-          </slide>
+          </slide> -->
         </carousel-3d>
     </main>
 </template>
@@ -64,6 +62,7 @@ export default {
     BootstrapVue,
     EventModal
   },
+  props: ["eventData"],
   data() {
     return {
       API: {

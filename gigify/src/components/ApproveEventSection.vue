@@ -2,7 +2,7 @@
     <div>
         <h2>This is the section where the pending events will be generated after an artist submits a request</h2>
         <PendingEvent />
-        <AddAvailableDate />
+        <AddAvailableDate :availableDates="availableDates" :API="API" />
         <button @click.prevent="toggleEventForm()">Manually Add an Event</button>
         <ManuallyAddEvent v-show="eventFormDisplaying" />
     </div>
@@ -22,6 +22,8 @@ export default {
   data() {
     return {
       eventFormDisplaying: false,
+      availableDates: [],
+      eventData: [],
       API: {
         DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
         APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
@@ -33,6 +35,18 @@ export default {
     toggleEventForm() {
       this.eventFormDisplaying = !this.eventFormDisplaying;
     }
+  },
+  async mounted() {
+    Promise.all([
+      fetch(this.API.DATE_LISTINGS).then(res => res.json()),
+
+      fetch(this.API.APPROVED_SHOWS).then(res => res.json()),
+
+      fetch(this.API.REQUESTED_SHOWS).then(res => res.json())
+    ]).then(res => {
+      this.eventData = res;
+      console.log(this.eventData);
+    });
   }
 };
 </script>

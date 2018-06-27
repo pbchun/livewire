@@ -1,6 +1,7 @@
 <template>
     <div>
         <main>
+            <h1>{{eventData[1].events[1].artist}}</h1>
             <DateSection :availableDates="availableDates" :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
             <RequestDateForm :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
         </main>
@@ -21,6 +22,7 @@ export default {
     return {
       isDisplaying: true,
       availableDates: [],
+      eventData: [],
       API: {
         DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
         APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
@@ -34,13 +36,16 @@ export default {
     }
   },
   async mounted() {
-    fetch(this.API.DATE_LISTINGS)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        this.availableDates = res;
-        console.log(res);
-      });
+    Promise.all([
+      fetch(this.API.DATE_LISTINGS).then(res => res.json()),
+
+      fetch(this.API.APPROVED_SHOWS).then(res => res.json()),
+
+      fetch(this.API.REQUESTED_SHOWS).then(res => res.json())
+    ]).then(res => {
+      this.eventData = res;
+      console.log(this.eventData);
+    });
   }
 };
 </script>
