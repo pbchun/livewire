@@ -20,15 +20,7 @@ export default {
     AvailableDate
   },
   props: ["isDisplaying", "toggleDisplay", "API", "availableDates"],
-  methods: {},
-  async mounted() {
-    fetch(this.API.DATE_LISTINGS)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        this.availableDates = res;
-      });
-  }
+  methods: {}
 };
 </script>
 

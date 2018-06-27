@@ -32,6 +32,15 @@ export default {
     toggleDisplay() {
       this.isDisplaying = !this.isDisplaying;
     }
+  },
+  async mounted() {
+    fetch(this.API.DATE_LISTINGS)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        this.availableDates = res;
+        console.log(res);
+      });
   }
 };
 </script>
