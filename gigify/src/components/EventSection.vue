@@ -5,7 +5,7 @@
              :hide-footer="true"
              size="lg"
              id='modal1'>
-           <EventModal :eventData="eventData" />
+           <EventModal :eventData="eventData" v-for="event in eventData[1].events" :key="event.id" />
         </b-modal>
         
        
@@ -20,13 +20,9 @@
         :inverse-scaling="1000" :space="600"
         >
         <slide :index="eventData[1].events.indexOf(event)" v-for="event in eventData[1].events" :key="event.id">
-<<<<<<< HEAD
           <div v-b-modal.modal1>
              <Event :eventData="eventData" />
           </div> 
-=======
-          <Event :eventData="eventData[1].events[eventData[1].events.indexOf(event)]" />
->>>>>>> 1ac1db5912d25d06eb22a8991f30fe2324777ef7
         </slide> 
           <!-- <slide :index="1"  class="slide">
             <div v-b-modal.modal2>
