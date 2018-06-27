@@ -4,7 +4,11 @@
            <h1>{{eventData[2].events[0].artist}}</h1>
        </header>
        <main>
-           <p>this band sux. Def dont go</p>
+            <iframe 
+                width="420"
+                height="315"
+                src="https://www.youtube.com/embed/tgbNymZ7vqY">
+            </iframe> 
        </main>
        <footer>
            
