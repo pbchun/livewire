@@ -31,7 +31,7 @@
         :inverse-scaling="1000" :space="600"
         >
         <slide :index="eventData[1].events.indexOf(event)" v-for="event in eventData[1].events" :key="event.id">
-          <Event :eventData="eventData" />
+          <Event :eventData="eventData[1].events[eventData[1].events.indexOf(event)]" />
         </slide> 
           <!-- <slide :index="1"  class="slide">
             <div v-b-modal.modal2>
