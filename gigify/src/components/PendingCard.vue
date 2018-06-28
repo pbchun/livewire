@@ -7,16 +7,19 @@
         <p class="card-test">Phone: {{pendingEvent.phone}}</p>
         <p class="card-test">Email: {{pendingEvent.email}}</p>
         <br><img :src="pendingEvent.image">
-        <br><b-button vue-router="#" variant="primary" @click.prevent="submitRequest">Approve this Request</b-button>
+        <br><b-button vue-router="#" variant="primary" @click="submitRequest">Approve this Request</b-button>
     </b-card>
 </template>
 
 <script>
 export default {
-    props: ["pendingEvent", "API"],
-    data () {
-return {
-    acceptedEvent: {
+  props: ["pendingEvent", "API"],
+  data() {
+    return {
+      REQUESTED_TEMPLATE: `https://pure-taiga-70535.herokuapp.com/events/${
+        this.pendingEvent.date
+      }`,
+      acceptedEvent: {
         date: this.pendingEvent.date,
         artist: this.pendingEvent.artist,
         venue: this.pendingEvent.venue,
@@ -27,28 +30,36 @@ return {
         musicSample: this.pendingEvent.musicSample,
         image: this.pendingEvent.image,
         description: this.pendingEvent.description
-},
-        }
-    },
-   methods: {
-        submitRequest() {
+      }
+    };
+  },
+  methods: {
+    submitRequest() {
       this.postEvent();
+      vm.$forceUpdate();
     },
     postEvent() {
       const postOptions = {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(this.acceptedEvent),
-        headers: {'Content-Type':'application/json'}
-      }
+        headers: { "Content-Type": "application/json" }
+      };
       fetch(this.API.APPROVED_SHOWS, postOptions)
-        .then(res => res.json())
-        .then(resJSON => console.log(resJSON))
-
+        .then(res => {
+          if (res.status == 201) this.deleteEvent();
+          else console.error(res.status);
+          return res;
+        })
+        .then(resJSON => console.log(resJSON));
+    },
+    deleteEvent() {
+      return fetch(this.REQUESTED_TEMPLATE, {
+        method: "delete"
+      }).then(resJSON => console.log(resJSON));
     }
-  },   
-}
+  }
+};
 </script>
 
 <style scoped>
-
 </style>
