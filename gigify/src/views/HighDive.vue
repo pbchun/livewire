@@ -1,9 +1,10 @@
 <template>
   <div class="high-dive">
+    
     <header>
       <h1>Welcome to The Hi-Dive</h1>
     </header>
-    <EventSection :eventData="eventData" :testing="proptest()" />
+    <EventSection :modalShow="modalShow" :clickedEvent="clickedEvent" :populateModal="populateModal" :eventData="eventData" />
     <VenueFooter />
   </div>
 </template>
@@ -20,6 +21,8 @@ export default {
   },
   data() {
     return {
+      modalShow: false,
+      clickedEvent: {},
       eventData: [],
       API: {
         DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
@@ -29,8 +32,10 @@ export default {
     };
   },
   methods: {
-    proptest() {
-      console.log(this.API.DATE_LISTINGS);
+    populateModal(clickedEvent) {
+      this.modalShow = !this.modalShow;
+      this.clickedEvent = clickedEvent;
+      console.log(clickedEvent);
     }
   },
   async mounted() {

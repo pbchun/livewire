@@ -1,24 +1,18 @@
  <template>
     <main class="carousel">
+      
        <h2>Events</h2>
-      <b-modal 
-             :hide-footer="true"
-             size="lg"
-             id="modal1">
-           <EventModal />
-        </b-modal>
-        <b-modal 
-             :hide-footer="true"
-             size="lg"
-             id="modal2">
-           <EventModal />
-        </b-modal>
-        <b-modal 
-             :hide-footer="true"
-             size="lg"
-             id="modal3">
-           <EventModal />
-        </b-modal>
+        
+
+          <b-modal
+                v-model="modalShow"
+                :hide-footer="true"
+                size="lg"
+                >
+              
+              <EventModal :clickedEvent="clickedEvent" :eventData="eventData" />
+          </b-modal>
+         
        
         <carousel-3d id="carousel" style="height:70%;" 
         :controls-visible="true" 
@@ -30,19 +24,18 @@
         :clickable="true"
         :inverse-scaling="1000" :space="600"
         >
-        <slide :index="eventData[1].events.indexOf(event)" v-for="event in eventData[1].events" :key="event.id">
-          <Event :eventData="eventData[1].events[eventData[1].events.indexOf(event)]" />
+
+        <slide 
+        id="slide"
+        :index="eventData[1].events.indexOf(event)" 
+        v-for="event in eventData[1].events" 
+        :key="event.id">
+        
+          <div @click="populateModal(event)" >  
+          
+              <Event :clickedEvent="clickedEvent" :modalShow="modalShow" :event="event" :eventData="eventData[1].events[eventData[1].events.indexOf(event)]" />
+          </div>
         </slide> 
-          <!-- <slide :index="1"  class="slide">
-            <div v-b-modal.modal2>
-              <Event />
-            </div> 
-          </slide>
-          <slide :index="2"  class="slide">
-            <div v-b-modal.modal3>
-              <Event />
-            </div>
-          </slide> -->
         </carousel-3d>
     </main>
 </template>
@@ -62,7 +55,8 @@ export default {
     BootstrapVue,
     EventModal
   },
-  props: ["eventData"],
+  props: ["eventData", "populateModal", "clickedEvent", "modalShow", "event"],
+
   data() {
     return {
       API: {
@@ -76,17 +70,11 @@ export default {
 </script>
 
 <style scoped>
+#slide {
+  border: none;
+}
 #carousel {
   margin-top: 55px;
   margin-bottom: 35px;
-}
-
-.slide {
-  border: none;
-  border-radius: 20px;
-}
-
-.slide:hover {
-  margin-top: 8px;
 }
 </style> 
