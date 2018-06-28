@@ -41,6 +41,7 @@ export default {
     submitRequest() {
       // this.addRequest(this.request);
       console.log(this.API.REQUESTED_SHOWS)
+      this.request.date = this.showDate;
       this.postRequest();
       this.request = {
         date: "",
