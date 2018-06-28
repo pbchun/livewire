@@ -16,27 +16,22 @@ export default {
     props: ["pendingEvent", "API"],
     data () {
 return {
-    lengthOfEvents: undefined,
     acceptedEvent: {
-        date:"",
-        artist: "",
-        venue: "",
-        contactName: "",
-        phone: "",
-        email: "",
-        website: "",
-        musicSample: "",
-        image: "",
-        description: ""
+        date: this.pendingEvent.date,
+        artist: this.pendingEvent.artist,
+        venue: this.pendingEvent.venue,
+        contactName: this.pendingEvent.contactName,
+        phone: this.pendingEvent.phone,
+        email: this.pendingEvent.email,
+        website: this.pendingEvent.website,
+        musicSample: this.pendingEvent.musicSample,
+        image: this.pendingEvent.image,
+        description: this.pendingEvent.description
 },
         }
     },
    methods: {
         submitRequest() {
-      // this.addRequest(this.request);
-      console.log(this.API.APPROVED_SHOWS)
-      this.acceptedEvent = this.pendingEvent;
-      console.log(this.pendingEvent)
       this.postEvent();
     },
     postEvent() {
