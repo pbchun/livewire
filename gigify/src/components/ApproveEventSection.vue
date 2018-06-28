@@ -1,7 +1,9 @@
 <template>
     <div>
         <h2>This is the section where the pending events will be generated after an artist submits a request</h2>
-        <PendingEvent />
+        <PendingEvent 
+          :approvedShow="approvedShow"
+        />
         <AddAvailableDate
           :availableDates="availableDates"
           :API="API" />
@@ -34,6 +36,7 @@
         eventFormDisplaying: false,
         availableDates: [],
         eventData: [],
+        approvedShow: [],
         API: {
           DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
           APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
