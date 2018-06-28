@@ -10,8 +10,6 @@
             <h5 class='dateOfEvent'>{{eventData.date}}</h5>
             <!-- <p class='description'>{{eventData.description}}</p> -->
          </div>
-            
-
         </div>
       
     </section>
