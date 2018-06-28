@@ -81,83 +81,83 @@
 </template>
 
 <script>
-  export default {
-    name: "request-date-form",
-    props: ["isDisplaying", "toggleDisplay", "API", "showDate"],
-    data() {
-      return {
-        request: {
-          date: "",
-          artist: "",
-          contactName: "",
-          phone: "",
-          email: "",
-          website: "",
-          musicSample: "",
-          image: "",
-          description: ""
-        }
+export default {
+  name: "request-date-form",
+  props: ["isDisplaying", "toggleDisplay", "API", "showDate"],
+  data() {
+    return {
+      request: {
+        date: "",
+        artist: "",
+        contactName: "",
+        phone: "",
+        email: "",
+        website: "",
+        musicSample: "",
+        image: "",
+        description: ""
+      }
+    };
+  },
+  methods: {
+    submitRequest() {
+      this.request.date = this.showDate;
+      this.postRequest();
+      this.request = {
+        date: "",
+        artist: "",
+        contactName: "",
+        phone: "",
+        email: "",
+        website: "",
+        musicSample: "",
+        image: "",
+        description: ""
       };
     },
-    methods: {
-      submitRequest() {
-        this.request.date = this.showDate;
-        this.postRequest();
-        this.request = {
-          date: "",
-          artist: "",
-          contactName: "",
-          phone: "",
-          email: "",
-          website: "",
-          musicSample: "",
-          image: "",
-          description: ""
-        };
-      },
-      postRequest() {
-        const postOptions = {
-          method: 'POST',
-          body: JSON.stringify(this.request),
-          headers: {'Content-Type':'application/json'}
-        }
-        fetch(this.API.REQUESTED_SHOWS, postOptions)
-          .then(res => res.json())
-          .then(resJSON => console.log(resJSON))
-      }
+    postRequest() {
+      const postOptions = {
+        method: "POST",
+        body: JSON.stringify(this.request),
+        headers: { "Content-Type": "application/json" }
+      };
+      fetch(this.API.REQUESTED_SHOWS, postOptions)
+        .then(res => res.json())
+        .then(resJSON => console.log(resJSON));
     }
-  };
+  }
+};
 </script>
 
 <style>
-  .requestForm {
-    margin-left: 40%;
-    margin-right: 40%;
-  }
+.requestForm {
+  margin-left: 40%;
+  margin-right: 40%;
+}
 
-  input {
-    width: 50%;
-  }
+input {
+  width: 50%;
+}
 
-  #submitButton {
-    font-size: 25px;
-    margin: 40px;
-    border-radius: 300px;
-  }
+#submitButton {
+  font-size: 25px;
+  margin: 40px;
+  border-radius: 300px;
+}
 
-  #return {
-    background-color: #ffffff;
-    border: 0px;
-    color: #0056b3;
-    text-decoration: underline;
-  }
+#return {
+  background-color: #ffffff;
+  border: 0px;
+  color: #0056b3;
+  text-decoration: underline;
+}
 
-  .form-group {
-    display: block;
-    color: red;
-  }
+.form-group {
+  display: block;
+  color: red;
+}
 
-  div h1 {
-    margin: 40px;
-  }
+div h1 {
+  margin: 40px;
+}
 </style>
