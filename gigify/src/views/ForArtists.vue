@@ -1,7 +1,6 @@
 <template>
     <div>
         <main>
-            <h1>{{eventData[1].events[1].artist}}</h1>
             <DateSection :availableDates="availableDates" :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
             <RequestDateForm :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
         </main>
