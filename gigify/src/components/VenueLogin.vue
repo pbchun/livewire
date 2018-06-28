@@ -1,8 +1,13 @@
 <template>
     <section>
         <h2>This is where the dummy login form component lives</h2>
-        <form action=""></form>
-        <button @click.prevent="toggleDisplay">Login</button>
+        <form action="">
+            <a class="loginLabel">User Name</a>
+            <input type="text">
+            <a class="loginLabel">Password</a>
+            <input type="text">
+            <button @click.prevent="toggleDisplay">Login</button>
+        </form>
     </section>
 </template>
 
@@ -13,3 +18,15 @@ export default {
 };
 </script>
 
+<style>
+
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+form a{
+    text-align: left;
+}
+</style>
