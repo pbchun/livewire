@@ -14,20 +14,20 @@ import RequestDateForm from "@/components/RequestDateForm";
 
 export default {
     name: "available-date",
-    props: ["toggleDisplay", "eventData"],
+    props: ["toggleDisplay", "eventData", "passDate", "showDate"],
     components: {
         RequestDateForm
     }, 
-    data() {
-        return {
-            showDate: ""
-        }
-    },
-    methods: {
-        passDate(event) {
-            this.showDate = event;
-        }
-    }
+    // data() {
+    //     return {
+    //         showDate: ""
+    //     }
+    // },
+    // methods: {
+    //     passDate(event) {
+    //         this.showDate = event;
+    //     }
+    // }
 };
 </script>
 

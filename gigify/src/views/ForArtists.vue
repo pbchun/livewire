@@ -2,8 +2,8 @@
     <div>
         <main>
             <h1>{{eventData[1].events[1].artist}}</h1>
-            <DateSection :availableDates="availableDates" :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" :eventData="eventData"/>
-            <RequestDateForm :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
+            <DateSection :availableDates="availableDates" :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" :eventData="eventData" :showDate="showDate" :passDate="passDate" />
+            <RequestDateForm :API="API" :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" :showDate="showDate" />
         </main>
     </div>
 </template>
@@ -23,6 +23,7 @@ export default {
       isDisplaying: true,
       availableDates: [],
       eventData: [],
+      showDate: "",
       API: {
         DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
         APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
@@ -33,6 +34,10 @@ export default {
   methods: {
     toggleDisplay() {
       this.isDisplaying = !this.isDisplaying;
+    },
+    passDate(event) {
+      this.showDate = event;
+      console.log(this.showDate)
     }
   },
   async mounted() {
