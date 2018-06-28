@@ -42,7 +42,7 @@
                     class="form-control mb-2 mr-sm-2"
                     type="text"
                     name="image"
-                    placeholder="Image"
+                    placeholder="Music Sample"
                 />
                 <input
                     v-model="event.description"
