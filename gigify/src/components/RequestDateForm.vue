@@ -2,7 +2,7 @@
     <div>
         <h1>Request a Date</h1>
     <form class="requestForm" :submitRequest="submitRequest" v-on:submit.prevent="submitRequest">
-          <input v-model="request.date" class="form-control mb-2 mr-sm-2" type="text" name="date" :value=showDate>
+          <input v-model="request.date" class="form-control mb-2 mr-sm-2" type="text" name="date" :placeholder=showDate readonly>
           <input v-model="request.artist" class="form-control mb-2 mr-sm-2" type="text" name="artistName" placeholder="Artist Name">
           <input v-model="request.contactName" class="form-control mb-2 mr-sm-2" type="text" name="contactName" placeholder="Contact Name">
           <input v-model="request.phone" class="form-control mb-2 mr-sm-2" type="text" name="phone" placeholder="Phone Number">
