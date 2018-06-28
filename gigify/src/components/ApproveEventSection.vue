@@ -2,54 +2,73 @@
     <div>
         <h2>This is the section where the pending events will be generated after an artist submits a request</h2>
         <PendingEvent />
-        <AddAvailableDate :availableDates="availableDates" :API="API" />
-        <button @click.prevent="toggleEventForm()">Manually Add an Event</button>
-        <ManuallyAddEvent v-show="eventFormDisplaying" />
+        <AddAvailableDate
+          :availableDates="availableDates"
+          :API="API" />
+        <button
+          class="add-event"
+          @click.prevent="toggleEventForm()"
+        >
+          Add an Event.
+        </button>
+        <ManuallyAddEvent
+          v-show="eventFormDisplaying"
+          :API="API"
+        />
     </div>
 </template>
 
 <script>
-import PendingEvent from "@/components/PendingEvent";
-import ManuallyAddEvent from "@/components/ManuallyAddEvent";
-import AddAvailableDate from "@/components/AddAvailableDate";
+  import PendingEvent from "@/components/PendingEvent";
+  import ManuallyAddEvent from "@/components/ManuallyAddEvent";
+  import AddAvailableDate from "@/components/AddAvailableDate";
 
-export default {
-  components: {
-    PendingEvent,
-    ManuallyAddEvent,
-    AddAvailableDate
-  },
-  data() {
-    return {
-      eventFormDisplaying: false,
-      availableDates: [],
-      eventData: [],
-      API: {
-        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
-        APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
-        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+  export default {
+    components: {
+      PendingEvent,
+      ManuallyAddEvent,
+      AddAvailableDate
+    },
+    data() {
+      return {
+        eventFormDisplaying: false,
+        availableDates: [],
+        eventData: [],
+        API: {
+          DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+          APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
+          REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+        }
+      };
+    },
+    methods: {
+      toggleEventForm() {
+        this.eventFormDisplaying = !this.eventFormDisplaying;
       }
-    };
-  },
-  methods: {
-    toggleEventForm() {
-      this.eventFormDisplaying = !this.eventFormDisplaying;
+    },
+    async mounted() {
+      Promise.all([
+        fetch(this.API.DATE_LISTINGS).then(res => res.json()),
+        fetch(this.API.APPROVED_SHOWS).then(res => res.json()),
+        fetch(this.API.REQUESTED_SHOWS).then(res => res.json())
+      ]).then(res => { this.eventData = res; }
+      );
     }
-  },
-  async mounted() {
-    Promise.all([
-      fetch(this.API.DATE_LISTINGS).then(res => res.json()),
-
-      fetch(this.API.APPROVED_SHOWS).then(res => res.json()),
-
-      fetch(this.API.REQUESTED_SHOWS).then(res => res.json())
-    ]).then(res => {
-      this.eventData = res;
-      console.log(this.eventData);
-    });
-  }
-};
+  };
 </script>
 
 <style>
+  .add-event {
+    background-color: rgb(0, 123, 255);
+    border-bottom-color: rgb(0, 123, 255);
+    border-radius: 4px;
+    border: 1px solid rgb(0, 123, 255);
+    color: #fff;
+    font-size: 25px;
+    margin: 40px;
+  }
+  .add-event:hover{
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
 </style>
