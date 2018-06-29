@@ -1,6 +1,6 @@
 <template>
   <main class="carousel">
-    <h2>Events</h2>
+    <h2>Upcoming Events</h2>
     <b-modal
       v-model="modalShow"
       :hide-footer="true"
@@ -18,10 +18,11 @@
       style="height:70%;"
       :controls-visible="true"
       :autoplay="true"
+      :display="3"
       :autoplayTimeout="8500"
       :controls-width="80"
-      :height="325"
-      :width="390"
+      :height="340"
+      :width="440"
       :clickable="true"
       :inverse-scaling="1000"
       :space="600">
@@ -78,10 +79,26 @@ export default {
 <style scoped>
 #slide {
   border: none;
+  box-shadow: 2px 2px 10px #f88c19;
+  border-radius: 7px;
+  height: 100%;
+  width: 100%;
+  background: none;
+  margin-bottom: px;
 }
 
 #carousel {
   margin-top: 55px;
   margin-bottom: 35px;
+  width: 90%;
+}
+
+#carousel .carousel-3d-container {
+  margin-bottom: 20px;
+}
+
+.carousel-3d-container[data-v-c06c963c] {
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 </style>
