@@ -1,6 +1,6 @@
 <template>
   <div class="high-dive">
-    
+    <Header />
     <header>
       <h1>Welcome to The Hi-Dive</h1>
     </header>
@@ -12,12 +12,14 @@
 <script>
 import VenueFooter from "@/components/VenueFooter";
 import EventSection from "@/components/EventSection";
+import Header from "@/components/Header";
 
 export default {
   name: "high-dive",
   components: {
     VenueFooter,
-    EventSection
+    EventSection,
+    Header
   },
   data() {
     return {
