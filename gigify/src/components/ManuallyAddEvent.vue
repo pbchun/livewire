@@ -1,6 +1,7 @@
 <template>
-    <div>
-        <main>
+    <div id="backgroundForm">
+        <main id="addForm">
+            <h2>Add an event</h2>
             <form 
                 class="requestForm" 
                 :submitAddedEvent="submitEvent" 
@@ -103,3 +104,28 @@
         }
     };
 </script>
+
+<style scoped>
+    #submitButton {
+        font-size: 25px;
+        margin: 40px;
+        border-radius: 300px;
+        background-color: #f88c19;
+        color: white;
+        width: 50%;
+    }
+    .requestForm {
+        background-color: RGB(70,68,68);
+        padding: 1% 2% 2% 2%;
+        margin-top: 5%;
+        /* width: 75%; */
+    }
+    #backgroundForm {
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    }
+    #addForm {
+        width: 50%;
+    }
+</style>
