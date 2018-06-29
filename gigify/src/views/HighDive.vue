@@ -2,7 +2,7 @@
   <div class="high-dive">
     <Header />
     <header>
-      <h1>Welcome to The Hi-Dive</h1>
+      <h1>Live at The Hi-Dive</h1>
     </header>
     <EventSection :modalShow="modalShow" :clickedEvent="clickedEvent" :populateModal="populateModal" :eventData="eventData" />
     <VenueFooter />

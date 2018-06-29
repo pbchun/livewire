@@ -12,22 +12,10 @@ html {
 #app {
   background-color: black;
 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 #nav {
   padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 
 h1,
@@ -36,6 +24,7 @@ h3,
 h4,
 h5,
 h6,
+a,
 button {
   color: #f88c19 !important;
   font-family: "Pathway Gothic One", sans-serif;
@@ -43,10 +32,9 @@ button {
   letter-spacing: 0.12em;
 }
 
-p,
-a {
+p {
   color: white;
-  font-size: 1.2em;
+  font-size: 1.6em;
   letter-spacing: 0.06em;
   font-family: "Sree Krushnadevaraya", serif;
 }
