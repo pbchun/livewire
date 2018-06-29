@@ -1,7 +1,6 @@
 <template>
   <div>
     <main>
-      <h1>{{eventData[1].events[1].artist}}</h1>
       <DateSection 
         :availableDates="availableDates"
         :API="API" 
@@ -20,18 +19,21 @@
         :showDate="showDate" 
       />
     </main>
+    <VenueFooter />
   </div>
 </template>
 
 <script>
   import DateSection from "@/components/DateSection";
   import RequestDateForm from "@/components/RequestDateForm";
+  import VenueFooter from "@/components/VenueFooter";
   
   export default {
     name: "for-artists",
     components: {
       DateSection,
-      RequestDateForm
+      RequestDateForm,
+      VenueFooter
     },
     data() {
       return {
@@ -69,5 +71,7 @@
 </script>
 
 <style>
-  
+html {
+  background-color: black
+}
 </style>
