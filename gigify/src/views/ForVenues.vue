@@ -1,5 +1,6 @@
 <template>
     <div>
+      <Header />
         <main>
             <VenueLogin :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
             <ApproveEventSection :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
@@ -14,12 +15,15 @@
 <script>
 import VenueLogin from "@/components/VenueLogin";
 import ApproveEventSection from "@/components/ApproveEventSection";
+import Header from "@/components/Header";
+
 
 export default {
   name: "for-venues",
   components: {
     VenueLogin,
-    ApproveEventSection
+    ApproveEventSection,
+    Header
   },
   data() {
     return {

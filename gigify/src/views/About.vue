@@ -1,5 +1,6 @@
 <template>
     <div class  ="profile-container">
+        <Header />
         <div class="profile">
             <img src ="../assets/profilePics/reed.png">
             <h2>Reed Black</h2>
@@ -34,7 +35,13 @@
 </template>
 
 <script>
-export default {};
+import Header from "@/components/Header";
+
+export default {
+    components: {
+        Header
+    }
+};
 </script>
 
 <style scoped>
