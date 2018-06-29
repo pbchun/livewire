@@ -1,13 +1,16 @@
 <template>
-    <b-card>
+    <b-card id="card-background">
         <p class="mainInfo">{{pendingEvent.artist}}</p>
         <p class="mainInfo">Date: {{pendingEvent.date}}</p>
-        <p class="mainInfo">Venue: {{pendingEvent.venue}}</p>
         <p class="card-test">Contact: {{pendingEvent.contactName}}</p>
         <p class="card-test">Phone: {{pendingEvent.phone}}</p>
+        <p class="card-test">Web: {{pendingEvent.website}}</p>
         <p class="card-test">Email: {{pendingEvent.email}}</p>
         <br><img :src="pendingEvent.image">
-        <br><b-button vue-router="#" variant="primary" @click="submitRequest">Approve this Request</b-button>
+        <div class="button-section">
+            <b-button id="white" vue-router="#" variant="primary" @click="submitRequest">Approve</b-button>
+            <b-button id="white" vue-router="#" variant="danger" @click="deleteEvent">Reject</b-button>
+        </div>
     </b-card>
 </template>
 
@@ -49,15 +52,21 @@ export default {
           else console.error(res.status);
           return res.json();
         })
-        .then(resJSON => console.log('DATA has been posted to API_APPROVED_SHOWS -> ', resJSON));
-
+        .then(resJSON =>
+          console.log("DATA has been posted to API_APPROVED_SHOWS -> ", resJSON)
+        );
     },
     deleteEvent() {
       return fetch(this.REQUESTED_TEMPLATE, {
         method: "delete"
       }).then(resJSON => {
-          if(resJSON.status ===204 ) console.log('Data, ', this.pendingEvent, ' has been deleted...')
-          else console.log('Data, ', this.pendingEvent+ ' was unable to be deleted...')
+        if (resJSON.status === 204)
+          console.log("Data, ", this.pendingEvent, " has been deleted...");
+        else
+          console.log(
+            "Data, ",
+            this.pendingEvent + " was unable to be deleted..."
+          );
       });
     }
   }
@@ -65,4 +74,19 @@ export default {
 </script>
 
 <style scoped>
+.button-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+}
+
+#white {
+  color: white;
+}
+
+#card-background {
+  background: black;
+  border: 1px solid orange;
+}
 </style>
