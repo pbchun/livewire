@@ -1,0 +1,23 @@
+{
+  "name": "gigify",
+  "version": "1.0.0",
+  "description": "Working in an instructor-assigned group of 3-5 people, you will build a full-stack application. Your application should include:",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trujilloj/gigify.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trujilloj/gigify/issues"
+  },
+  "homepage": "https://github.com/trujilloj/gigify#readme",
+  "devDependencies": {
+    "cypress": "^3.0.2"
+  }
+}
