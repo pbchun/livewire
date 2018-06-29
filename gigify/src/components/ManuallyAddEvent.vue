@@ -114,18 +114,17 @@
         color: white;
         width: 50%;
     }
-    .requestForm {
+    #addForm {
         background-color: RGB(70,68,68);
         padding: 1% 2% 2% 2%;
         margin-top: 5%;
         /* width: 75%; */
+        width: 50%;
     }
     #backgroundForm {
         display: flex;
         justify-content: center;
         background-color: black;
     }
-    #addForm {
-        width: 50%;
-    }
+
 </style>
