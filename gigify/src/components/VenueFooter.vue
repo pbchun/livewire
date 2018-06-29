@@ -42,6 +42,10 @@
         text-align: left;
     }
 
+    #app > div > footer > p{
+        margin-bottom: 0em;
+    }
+    
     .venue-footer a {
         padding-left: 3vh;
         padding-right: 3vh;
