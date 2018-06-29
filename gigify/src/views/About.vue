@@ -59,7 +59,7 @@
                     <p>I like long walks on the beach and going on marathon runs. When I'm never doing those things I enjoy playing board games and music in my free time. Despite the sky high cost of living I currently live in Denver with my girlfriend, Megan, and two dogs, Bukowski and Toki.</p>
                 </div>
                 <div>
-                    <a href="http://www.google.com"><img src="../assets/gitIco.png"></a>
+                    <a href="http://www.github.com/trujilloj"><img src="../assets/gitIco.png"></a>
                     <a href="https://www.linkedin.com/in/trujilloj/"><img src="../assets/liIco.png"></a>
                 </div>
             </div>
