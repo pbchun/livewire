@@ -1,25 +1,25 @@
 <template>
   <div class="high-dive">
-    <Header />
+    
     <header>
-      <h1>Live at The Hi-Dive</h1>
+      <h1>Live at The High-Dive</h1>
     </header>
     <EventSection :modalShow="modalShow" :clickedEvent="clickedEvent" :populateModal="populateModal" :eventData="eventData" />
-    <VenueFooter />
+    <div>
+     <VenueFooter />
+    </div>
   </div>
 </template>
 
 <script>
 import VenueFooter from "@/components/VenueFooter";
 import EventSection from "@/components/EventSection";
-import Header from "@/components/Header";
 
 export default {
   name: "high-dive",
   components: {
     VenueFooter,
-    EventSection,
-    Header
+    EventSection
   },
   data() {
     return {
