@@ -12,21 +12,20 @@
 </template>
 
 <script>
-export default {
-  name: "venue-login",
-  props: ["isDisplaying", "toggleDisplay"]
-};
+    export default {
+        name: "venue-login",
+        props: ["isDisplaying", "toggleDisplay"]
+    };
 </script>
 
 <style>
-
-form{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-form a{
-    text-align: left;
-}
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    form a {
+        text-align: left;
+    }
 </style>

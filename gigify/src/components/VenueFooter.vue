@@ -1,17 +1,17 @@
 <template>
     <footer class="venue-footer">
         <router-link to="/ForArtists">Artists - See Available Dates</router-link>
-    </footer> 
+    </footer>
 </template>
 
 <script>
-export default {};
+    export default {};
 </script>
 
 <style>
-.venue-footer {
-  position: absolute;
-  bottom: 3px;
-  margin-left: 30px;
-}
+    .venue-footer {
+        position: absolute;
+        bottom: 3px;
+        margin-left: 30px;
+    }
 </style>

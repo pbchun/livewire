@@ -1,8 +1,5 @@
 <template>
     <div>
-        <!-- <header>
-            <h3>Manually Add Events.</h3>
-        </header> -->
         <main>
             <form 
                 class="requestForm" 

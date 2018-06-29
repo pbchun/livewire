@@ -36,7 +36,6 @@ export default {
   methods: {
     submitRequest() {
       this.postEvent();
-      vm.$forceUpdate();
     },
     postEvent() {
       const postOptions = {
@@ -48,14 +47,18 @@ export default {
         .then(res => {
           if (res.status == 201) this.deleteEvent();
           else console.error(res.status);
-          return res;
+          return res.json();
         })
-        .then(resJSON => console.log(resJSON));
+        .then(resJSON => console.log('DATA has been posted to API_APPROVED_SHOWS -> ', resJSON));
+
     },
     deleteEvent() {
       return fetch(this.REQUESTED_TEMPLATE, {
         method: "delete"
-      }).then(resJSON => console.log(resJSON));
+      }).then(resJSON => {
+          if(resJSON.status ===204 ) console.log('Data, ', this.pendingEvent, ' has been deleted...')
+          else console.log('Data, ', this.pendingEvent+ ' was unable to be deleted...')
+      });
     }
   }
 };

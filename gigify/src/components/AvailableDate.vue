@@ -1,9 +1,18 @@
 <template>
-    <section class="available-dates">
-        <div class="available-date-cards" v-for="event in eventData[0].events" v-bind:key="event.date">
+    <section 
+        class="available-dates">
+        <div
+            class="available-date-cards"
+            v-for="event in eventData[0].events"
+            v-bind:key="event.date">
             <b-card>
                 <p class="card-text">{{event.date}} at {{event.venue}}</p>
-                <b-button vue-router="#" variant="primary" @click.prevent="toggleDisplay(), passDate(event.date)" showDate="event.date">Request to book this date</b-button>
+                <b-button 
+                    vue-router="#"
+                    variant="primary"
+                    @click.prevent="toggleDisplay(), passDate(event.date)"
+                    showDate="event.date">Request to book this date
+                </b-button>
             </b-card>
         </div>
     </section>
@@ -17,17 +26,7 @@ export default {
     props: ["toggleDisplay", "eventData", "passDate", "showDate"],
     components: {
         RequestDateForm
-    }, 
-    // data() {
-    //     return {
-    //         showDate: ""
-    //     }
-    // },
-    // methods: {
-    //     passDate(event) {
-    //         this.showDate = event;
-    //     }
-    // }
+    }
 };
 </script>
 
