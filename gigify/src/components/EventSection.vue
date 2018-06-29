@@ -4,6 +4,8 @@
     <b-modal
       v-model="modalShow"
       :hide-footer="true"
+      :body-bg-variant="bodyBgVariant"
+      :header-bg-variant="headerBgVariant"
       size="lg"
     >
       <EventModal
@@ -43,44 +45,43 @@
 </template>
 
 <script>
-  import BootstrapVue from "bootstrap-vue";
-  import {
+import BootstrapVue from "bootstrap-vue";
+import { Carousel3d, Slide } from "vue-carousel-3d";
+import Event from "@/components/Event";
+import EventModal from "@/components/EventModal";
+
+export default {
+  name: "event-section",
+  components: {
+    Event,
     Carousel3d,
-    Slide
-  } from "vue-carousel-3d";
-  import Event from "@/components/Event";
-  import EventModal from "@/components/EventModal";
-  
-  export default {
-    name: "event-section",
-    components: {
-      Event,
-      Carousel3d,
-      Slide,
-      BootstrapVue,
-      EventModal
-    },
-    props: ["eventData", "populateModal", "clickedEvent", "modalShow", "event"],
-  
-    data() {
-      return {
-        API: {
-          DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
-          APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
-          REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
-        }
-      };
-    }
-  };
+    Slide,
+    BootstrapVue,
+    EventModal
+  },
+  props: ["eventData", "populateModal", "clickedEvent", "modalShow", "event"],
+
+  data() {
+    return {
+      bodyBgVariant: "dark",
+      headerBgVariant: "dark",
+      API: {
+        DATE_LISTINGS: "https://whispering-plains-35500.herokuapp.com/events",
+        APPROVED_SHOWS: "https://arcane-chamber-96667.herokuapp.com/events",
+        REQUESTED_SHOWS: "https://pure-taiga-70535.herokuapp.com/events"
+      }
+    };
+  }
+};
 </script>
 
 <style scoped>
-  #slide {
-    border: none;
-  }
-  
-  #carousel {
-    margin-top: 55px;
-    margin-bottom: 35px;
-  }
+#slide {
+  border: none;
+}
+
+#carousel {
+  margin-top: 55px;
+  margin-bottom: 35px;
+}
 </style>
