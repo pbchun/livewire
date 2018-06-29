@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header />
     <main>
       <DateSection 
         :availableDates="availableDates"
@@ -27,13 +28,16 @@
   import DateSection from "@/components/DateSection";
   import RequestDateForm from "@/components/RequestDateForm";
   import VenueFooter from "@/components/VenueFooter";
+  import Header from "@/components/Header";
+
   
   export default {
     name: "for-artists",
     components: {
       DateSection,
       RequestDateForm,
-      VenueFooter
+      VenueFooter,
+      Header
     },
     data() {
       return {
