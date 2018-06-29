@@ -24,6 +24,7 @@ h3,
 h4,
 h5,
 h6,
+a,
 button {
   color: #f88c19 !important;
   font-family: "Pathway Gothic One", sans-serif;
@@ -31,8 +32,7 @@ button {
   letter-spacing: 0.12em;
 }
 
-p,
-a {
+p {
   color: white;
   font-size: 1.6em;
   letter-spacing: 0.06em;

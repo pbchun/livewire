@@ -95,6 +95,11 @@ export default {
 
 #carousel .carousel-3d-container {
   margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.carousel-3d-container[data-v-c06c963c][data-v-5c58899b] {
+  padding-top: 0px;
 }
 
 .carousel-3d-container[data-v-c06c963c] {
