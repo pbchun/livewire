@@ -34,57 +34,61 @@
 </template>
 
 <script>
-    export default {
-        name: "venue-login",
-        props: ["isDisplaying", "toggleDisplay"],
-        data(){
-            return{
-                login:{
-                    userName:"",
-                    password:""
-                }
-            }
-        },
-        methods: {
-            submitLogin(){
-                /*AUTH POST REQ HERE*/
-                this.postLogin()
-                this.toggleDisplay()
-            },
-            postLogin(){
-                var output = (
-                    '- TEST LOGIN -' + '\n' +
-                    'Username: ' + this.login.userName + '\n' 
-                    + 'Password: ' + this.login.password
-                )
-                alert(output)
-            }
-        }
+export default {
+  name: "venue-login",
+  props: ["isDisplaying", "toggleDisplay"],
+  data() {
+    return {
+      login: {
+        userName: "",
+        password: ""
+      }
     };
+  },
+  methods: {
+    submitLogin() {
+      /*AUTH POST REQ HERE*/
+      this.postLogin();
+      this.toggleDisplay();
+    },
+    postLogin() {
+      var output =
+        "- TEST LOGIN -" +
+        "\n" +
+        "Username: " +
+        this.login.userName +
+        "\n" +
+        "Password: " +
+        this.login.password;
+      alert(output);
+    }
+  }
+};
 </script>
 
 <style>
-    #loginButton {
-    font-size: 25px;
-    margin: 40px;
-    border-radius: 300px;
-    background-color: #f88c19;
-    color: white;
-    width: 50%;
-    }
-    #request {
-    background-color: RGB(70,68,68);
-    padding: 1% 2% 2% 2%;
-    margin-top: 5%;
-    width: 50%;
-    }
-    #backgroundForm {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    }
+#loginButton {
+  font-size: 25px;
+  margin: 40px;
+  border-radius: 300px;
+  background-color: #f88c19;
+  color: white;
+  width: 50%;
+}
+#request {
+  background-color: RGB(70, 68, 68);
+  padding: 1% 2% 2% 2%;
+  margin-top: 5%;
+  width: 50%;
+  margin-bottom: 13%;
+}
+#backgroundForm {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
 
-    h1 {
-    color: white;
-    }
+h1 {
+  color: white;
+}
 </style>

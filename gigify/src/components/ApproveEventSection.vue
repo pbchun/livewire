@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="manage">
         <h2>Submitted Artist Requests</h2>
         <PendingEvent 
           :approvedShow="approvedShow"
@@ -45,7 +45,7 @@ import PendingEvent from "@/components/PendingEvent";
 import AddAvailableDate from "@/components/AddAvailableDate";
 import ManuallyAddEvent from "@/components/ManuallyAddEvent";
 import PendingEventVue from "./PendingEvent.vue";
-import ManageApprovedDates from "@/components/ManageApprovedDates"
+import ManageApprovedDates from "@/components/ManageApprovedDates";
 
 export default {
   components: {
@@ -69,7 +69,7 @@ export default {
       }
     };
   },
-  
+
   methods: {
     togglePendingForm() {
       this.PendingFormDisplaying = !this.PendingFormDisplaying;
@@ -85,7 +85,7 @@ export default {
       this.ApprovedDatesDisplaying = !this.ApprovedDatesDisplaying;
       this.PendingFormDisplaying = false;
       this.ApprovedFormDisplaying = false;
-    }    
+    }
   },
   async mounted() {
     Promise.all([
@@ -100,6 +100,9 @@ export default {
 </script>
 
 <style>
+#manage {
+  margin-bottom: 6%;
+}
 .add-event {
   background-color: rgb(70, 68, 68);
   border-radius: 4px;

@@ -26,10 +26,13 @@ export default {
 </script>
 
 <style>
+.dateOfEvent {
+  text-shadow: 1px 1px 1px black;
+}
 .artistName {
   margin-bottom: 5px;
   margin-left: 34px;
-  text-shadow: 1px 1px 2px silver;
+  text-shadow: 1px 1px 2px black;
   letter-spacing: 0.22em;
 }
 

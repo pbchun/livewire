@@ -1,85 +1,85 @@
 <template>
-  <div id="backgroundForm">
-      <div id="request">
-        <h1>Request to be added to event</h1>
-        <form 
-          class="requestForm"
-          :submitRequest="submitRequest"
-          v-on:submit.prevent="submitRequest"
-        >
-          <input 
-            v-model="request.date"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="date"
-            :placeholder=showDate
-            readonly
-          >
-          <input 
-            v-model="request.artist"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="artistName"
-            placeholder="Artist Name"
-          >
-          <input
-            v-model="request.contactName"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="contactName"
-            placeholder="Contact Name"
-          >
-          <input
-            v-model="request.phone"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="phone"
-            placeholder="Phone Number"
-          >
-          <input
-            v-model="request.email"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="email"
-            placeholder="Email"
-          >
-          <input
-            v-model="request.website"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="website"
-            placeholder="Website"
-          >
-          <input
-            v-model="request.musicSample"
-            class="form-control mb-2 mr-sm-2"
-            type="text"
-            name="phone"
-            placeholder="Embed link from YouTube or SoundCloud"
-          >
-          <input
-            v-model="request.description"
-            name="description"
-            class="form-control mb-2 mr-sm-2"
-            placeholder="Short Artist Description">
-          <input
-            type="submit"
-            id="submitButton"
-            name="submit"
-            value="Submit"
-          />
-      </form>
-          <footer>
-              <button
-                id="return"
-                @click.prevent="toggleDisplay"
-                class="btn"
-              > 
-                Go back to available dates
-              </button>
-          </footer>
-      </div>
-    </div>
+ <div id="backgroundForm">
+     <div id="request">
+       <h1>Request to be added to event</h1>
+       <form
+         class="requestForm"
+         :submitRequest="submitRequest"
+         v-on:submit.prevent="submitRequest"
+       >
+         <input
+           v-model="request.date"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="date"
+           :placeholder=showDate
+           readonly
+         >
+         <input
+           v-model="request.artist"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="artistName"
+           placeholder="Artist Name"
+         >
+         <input
+           v-model="request.contactName"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="contactName"
+           placeholder="Contact Name"
+         >
+         <input
+           v-model="request.phone"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="phone"
+           placeholder="Phone Number"
+         >
+         <input
+           v-model="request.email"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="email"
+           placeholder="Email"
+         >
+         <input
+           v-model="request.website"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="website"
+           placeholder="Website"
+         >
+         <input
+           v-model="request.musicSample"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="phone"
+           placeholder="Embed link from YouTube or SoundCloud"
+         >
+         <input
+           v-model="request.description"
+           name="description"
+           class="form-control mb-2 mr-sm-2"
+           placeholder="Short Artist Description">
+         <input
+           type="submit"
+           id="submitButton"
+           name="submit"
+           value="Submit"
+         />
+     </form>
+         <footer>
+             <button
+               id="return"
+               @click.prevent="toggleDisplay"
+               class="btn"
+             >
+               Go back to available dates
+             </button>
+         </footer>
+     </div>
+   </div>
 </template>
 
 <script>
@@ -141,7 +141,7 @@ export default {
   width: 50%;
 }
 #request {
-  background-color: RGB(70,68,68);
+  background-color: RGB(70, 68, 68);
   padding: 1% 2% 2% 2%;
   margin-top: 5%;
   width: 50%;

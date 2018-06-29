@@ -37,57 +37,57 @@
 </template>
 
 <script>
-  export default {
-    name: "home"
-  };
+export default {
+  name: "home"
+};
 </script>
 
 <style>
-  .home-section{
-    margin-left: 20%;
-    margin-right: 20%;
-    border-bottom: 1px solid #f88c19;
-    margin-bottom: 29.05px;
-    margin-top: 29.05px;
-  }
-  .about{
-    
-    
-  }
-  .header-home{
-    background: linear-gradient(rgb(60,60,60), black);
-  }
-  .about-text {
-    text-align: center;
-    letter-spacing: 0.05em;
-    line-height: 1.5em;
-    font-size: 18px;
-    padding-left: 2%;
-    padding-right: 2%;
-  }
-  .logo {
-    height: 120px;
-    width: 100px;
-    align-self: center;
-  }
-  
-  .title {
-    margin-bottom: 5px;
-    margin-top: 7px;
-    letter-spacing: 0.23em;
-  }
-  
+.home {
+  font-family: "Pathway Gothic One", sans-serif;
+}
+.home-section {
+  margin-left: 20%;
+  margin-right: 20%;
+  border-bottom: 1px solid #f88c19;
+  margin-bottom: 29.05px;
+  margin-top: 29.05px;
+}
+
+.header-home {
+  background: linear-gradient(rgb(60, 60, 60), black);
+}
+.about-text {
+  text-align: center;
+  letter-spacing: 0.05em;
+  line-height: 1.5em;
+  font-size: 18px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.logo {
+  height: 120px;
+  width: 100px;
+  align-self: center;
+}
+
+.title {
+  margin-bottom: 5px;
+  margin-top: 7px;
+  letter-spacing: 0.23em;
+}
+
+.logo-section {
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
   .logo-section {
-    padding: 2%;
+    margin: 2%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
-  
-  @media only screen and (max-width: 600px) {
-    .logo-section {
-      margin: 2%;
-      display: flex;
-      flex-direction: column;
-    }
-  }
+}
 </style>

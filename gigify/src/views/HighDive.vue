@@ -1,11 +1,13 @@
 <template>
   <div class="high-dive">
-    <Header />
+    <Header /> 
     <header>
-      <h1>Live at The Hi-Dive</h1>
+      <h1>Live at The High-Dive</h1>
     </header>
     <EventSection :modalShow="modalShow" :clickedEvent="clickedEvent" :populateModal="populateModal" :eventData="eventData" />
-    <VenueFooter />
+    <div>
+     <VenueFooter />
+    </div>
   </div>
 </template>
 
@@ -55,4 +57,7 @@ export default {
 </script>
 
 <style>
+.high-dive {
+  font-family: "Pathway Gothic One", sans-serif;
+}
 </style>
