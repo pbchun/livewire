@@ -34,7 +34,6 @@
         />    
         <ManageApprovedDates
         v-show="ApprovedDatesDisplaying"
-        :API="API"
         :eventData="eventData"
         />
 
@@ -83,9 +82,9 @@ export default {
       this.ApprovedDatesDisplaying = false;
     },
     toggleApprovedDates() {
-      this.ApprovedFormDisplaying = !this.ApprovedFormDisplaying;
+      this.ApprovedDatesDisplaying = !this.ApprovedDatesDisplaying;
       this.PendingFormDisplaying = false;
-      this.ApprovedDatesDisplaying = false;
+      this.ApprovedFormDisplaying = false;
     }    
   },
   async mounted() {
