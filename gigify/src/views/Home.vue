@@ -25,7 +25,7 @@
       <section class='high-dive home-section'>
         <router-link to="/HighDive"> <h3> > The Hi-Dive < </h3> </router-link>
         <p class='about-text'>
-          Come visit our High-Dive to see upcoming events!
+          Click here to visit the Hi-Dive for upcoming events!
         </p>
       </section>
       
@@ -60,7 +60,7 @@
   .about-text {
     text-align: center;
     letter-spacing: 0.05em;
-    line-height: 1em;
+    line-height: 1.5em;
     font-size: 18px;
     padding-left: 2%;
     padding-right: 2%;
