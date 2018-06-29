@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="approved-list">
         <ApprovedDate id="flexit" :date="date" v-for="date in eventData[1].events" :key="date.id" />
     </div>
 </template>
@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style>
+.approved-list {
+  width: 95%;
+  margin-left: 31%;
+}
 </style>

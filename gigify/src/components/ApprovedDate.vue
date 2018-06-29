@@ -47,8 +47,9 @@ export default {
   color: white;
 }
 .approved-card {
+  background-color: #464444;
   width: 40%;
-  border: 1px solid orange;
+  box-shadow: 1px 1px 1px orange;
   border-radius: 7px;
   display: flex;
   flex-direction: row;

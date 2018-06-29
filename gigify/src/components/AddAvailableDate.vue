@@ -1,4 +1,4 @@
-```<template>
+<template>
   <div id='backgroundForm'>
     <div id='request'>
         <h1>Add an upcoming Open Date</h1>
@@ -54,8 +54,8 @@ export default {
         method: "POST",
         body: JSON.stringify(this.event)
       })
-      .then(res => res.json())
-      .then(resJSON => console.log(resJSON))
+        .then(res => res.json())
+        .then(resJSON => console.log(resJSON));
     }
   }
 };
@@ -63,7 +63,6 @@ export default {
 
 <style>
 .add-upcoming-form {
-
 }
 #submitButton {
   font-size: 25px;
@@ -74,15 +73,15 @@ export default {
   width: 50%;
 }
 #request {
-    background-color: RGB(70,68,68);
-    padding: 1% 2% 2% 2%;
-    margin-top: 5%;
-    width: 50%;
+  background-color: RGB(70, 68, 68);
+  padding: 1% 2% 2% 2%;
+  margin-top: 5%;
+  width: 50%;
 }
 #backgroundForm {
-display: flex;
-justify-content: center;
-background-color: black;
+  display: flex;
+  justify-content: center;
+  background-color: black;
 }
 #addForm {
   background-color: RGB(70, 68, 68);

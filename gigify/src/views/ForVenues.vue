@@ -1,13 +1,14 @@
 <template>
-    <div>
+    <div class="for-venues">
       <Header />
         <main>
             <VenueLogin :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="isDisplaying" />
             <ApproveEventSection :toggleDisplay="toggleDisplay" :isDisplaying="isDisplaying" v-show="!isDisplaying" />
         </main>
-        <footer>
-          <router-link to="/">Home</router-link>
-        </footer>
+         <VenueFooter class="footsticker" />
+        
+
+      
         
     </div>
 </template>
@@ -16,14 +17,15 @@
 import VenueLogin from "@/components/VenueLogin";
 import ApproveEventSection from "@/components/ApproveEventSection";
 import Header from "@/components/Header";
-
+import VenueFooter from "@/components/VenueFooter";
 
 export default {
   name: "for-venues",
   components: {
     VenueLogin,
     ApproveEventSection,
-    Header
+    Header,
+    VenueFooter
   },
   data() {
     return {
@@ -45,4 +47,12 @@ export default {
 </script>
 
 <style>
+.for-venues {
+  font-family: "Pathway Gothic One", sans-serif;
+}
+.footsticker {
+  margin-bottom: 0px;
+  position: relative;
+  bottom: 0px;
+}
 </style>

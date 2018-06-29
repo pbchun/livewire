@@ -38,5 +38,6 @@ nav {
 .text {
   margin-left: 12px;
   letter-spacing: 0.4em;
+  text-shadow: none;
 }
 </style>

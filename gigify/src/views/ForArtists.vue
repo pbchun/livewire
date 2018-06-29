@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="for-artists">
     <Header />
     <main>
       <DateSection 
@@ -74,6 +74,9 @@ export default {
 </script>
 
 <style>
+.for-artists {
+  font-family: "Pathway Gothic One", sans-serif;
+}
 html {
   background-color: black;
 }

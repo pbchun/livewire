@@ -45,7 +45,7 @@ export default {
   padding-right: 2vh;
 }
 #card-background {
-  background: black;
-  border: 1px solid orange;
+  background: #464444;
+  box-shadow: 0px 1px 2px orange;
 }
 </style>

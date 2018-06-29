@@ -79,7 +79,7 @@ export default {
 <style scoped>
 #slide {
   border: none;
-  box-shadow: 2px 2px 10px #f88c19;
+  box-shadow: 3px 3px 12px #f88c19;
   border-radius: 7px;
   height: 100%;
   width: 100%;

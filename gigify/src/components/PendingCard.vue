@@ -1,4 +1,5 @@
 <template>
+    <div>
     <b-card id="card-background">
         <p class="mainInfo">{{pendingEvent.artist}}</p>
         <p class="mainInfo">Date: {{pendingEvent.date}}</p>
@@ -8,15 +9,21 @@
         <p class="card-test">Email: {{pendingEvent.email}}</p>
         <br><img :src="pendingEvent.image">
         <div class="button-section">
-            <b-button id="white" vue-router="#" variant="primary" @click="submitRequest">Approve</b-button>
-            <b-button id="white" vue-router="#" variant="danger" @click="deleteEvent">Reject</b-button>
+            <b-button id="white" vue-router="#" variant="secondary" @click="submitRequest">Approve</b-button>
+            <b-button id="white" vue-router="#" variant="secondary" @click="deleteEvent">Reject</b-button>
         </div>
     </b-card>
+   
+    </div>
 </template>
 
 <script>
+import VenueFooter from "@/components/VenueFooter";
 export default {
   props: ["pendingEvent", "API"],
+  components: {
+    VenueFooter
+  },
   data() {
     return {
       REQUESTED_TEMPLATE: `https://pure-taiga-70535.herokuapp.com/events/${
@@ -86,7 +93,7 @@ export default {
 }
 
 #card-background {
-  background: black;
-  border: 1px solid orange;
+  background: #464444;
+  box-shadow: 0px 1px 2px orange;
 }
 </style>

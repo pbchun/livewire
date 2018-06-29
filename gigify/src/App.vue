@@ -6,14 +6,18 @@
 
 <style>
 html {
-  background-color: black;
+  background: url("/texture.jpg");
 }
 
 #app {
-  background-color: black;
-
   text-align: center;
+  background: url("/texture.jpg");
 }
+
+body {
+  background: url("/texture.jpg");
+}
+
 #nav {
   padding: 30px;
 }
@@ -31,7 +35,10 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.12em;
 }
-
+h1,
+h2 {
+  text-shadow: 1px 0px 1px silver;
+}
 p {
   color: white;
   font-size: 1.6em;

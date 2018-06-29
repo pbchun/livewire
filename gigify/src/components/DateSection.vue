@@ -35,4 +35,10 @@ export default {
 };
 </script>
 
+<style>
+.date-section {
+  margin-bottom: 22%;
+}
+</style>
+
 
