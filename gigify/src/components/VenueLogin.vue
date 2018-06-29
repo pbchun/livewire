@@ -1,31 +1,90 @@
 <template>
-    <section>
-        <h2>This is where the dummy login form component lives</h2>
-        <form action="">
-            <a class="loginLabel">User Name</a>
-            <input type="text">
-            <a class="loginLabel">Password</a>
-            <input type="text">
-            <button @click.prevent="toggleDisplay">Login</button>
-        </form>
-    </section>
+    <div id='backgroundForm'>
+        <div id='request'>
+            <h1>Venue Login</h1>
+            <form 
+            class="requestForm"
+            :submitRequest="submitLogin"
+            v-on:submit.prevent="submitLogin"
+            >
+            <input 
+                v-model="login.userName"
+                class="form-control mb-2 mr-sm-2"
+                type="text"
+                name="userName"
+                placeholder="Username"
+            >
+            <input 
+                v-model="login.password"
+                class="form-control mb-2 mr-sm-2"
+                type="text"
+                name="password"
+                placeholder="Password"
+            >
+            <input
+                type="submit"
+                id="loginButton"
+                name="submit"
+                value="Login"
+                @click.prevent="submitLogin"
+            />
+            </form>
+        </div>
+    </div>
 </template>
 
 <script>
     export default {
         name: "venue-login",
-        props: ["isDisplaying", "toggleDisplay"]
+        props: ["isDisplaying", "toggleDisplay"],
+        data(){
+            return{
+                login:{
+                    userName:"",
+                    password:""
+                }
+            }
+        },
+        methods: {
+            submitLogin(){
+                /*AUTH POST REQ HERE*/
+                this.postLogin()
+                this.toggleDisplay()
+            },
+            postLogin(){
+                var output = (
+                    '- TEST LOGIN -' + '\n' +
+                    'Username: ' + this.login.userName + '\n' 
+                    + 'Password: ' + this.login.password
+                )
+                alert(output)
+            }
+        }
     };
 </script>
 
 <style>
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    #loginButton {
+    font-size: 25px;
+    margin: 40px;
+    border-radius: 300px;
+    background-color: #f88c19;
+    color: white;
+    width: 50%;
     }
-    
-    form a {
-        text-align: left;
+    #request {
+    background-color: RGB(70,68,68);
+    padding: 1% 2% 2% 2%;
+    margin-top: 5%;
+    width: 50%;
+    }
+    #backgroundForm {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    }
+
+    h1 {
+    color: white;
     }
 </style>
