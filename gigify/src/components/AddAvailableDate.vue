@@ -1,12 +1,46 @@
-<template>
+```<template>
     <div>
-        <h1>section for adding available dates</h1>
+        <h1>Add an upcoming Open Date</h1>
+        <form 
+                :submitAddedEvent="submitEvent" 
+                v-on:submit.prevent="submitEvent">
+               <input 
+                    v-model="event.date" 
+                    class="form-control mb-2 mr-sm-2"
+                    type="text"
+                    name="date"
+                    placeholder="Date of event (MM-DD-YYYY Format)"
+                />
+               <input
+                    v-model="event.venue"
+                    class="form-control mb-2 mr-sm-2"
+                    type="text"
+                    name="venue"
+                    placeholder="Venue"
+                    readonly
+               />
+                <input 
+                    type="submit"
+                    id="submitButton"
+                    name="submit"
+                    value="Submit"
+                    class="btn btn-danger"
+                />
+            </form>
     </div>
 </template>
 
 <script>
 export default {
   props: ["API", "availableDates"],
+  data() {
+    return {
+      event: {
+        date: "",
+        venue: ""
+      }
+    };
+  },
   methods: {
     postAvailableDate() {
       return fetch(this.API.DATE_LISTINGS, {
@@ -14,7 +48,7 @@ export default {
           "content-type": "application/json"
         },
         method: "POST",
-        body: JSON.stringify(this.request)
+        body: JSON.stringify(this.event)
       });
     }
   }
@@ -22,4 +56,27 @@ export default {
 </script>
 
 <style>
-</style>
+#submitButton {
+  font-size: 25px;
+  margin: 40px;
+  border-radius: 300px;
+  background-color: #f88c19;
+  color: white;
+  width: 50%;
+}
+#addForm {
+  background-color: RGB(70, 68, 68);
+  padding: 1% 2% 2% 2%;
+  margin-top: 5%;
+  /* width: 75%; */
+  width: 50%;
+}
+#backgroundForm {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+</style>```
+Message Input
+
+Message Jose Trujillo, Mike Lavin, Jacob Hinkston, Peter Chun
