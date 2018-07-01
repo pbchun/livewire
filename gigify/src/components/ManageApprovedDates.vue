@@ -20,4 +20,9 @@ export default {
   width: 95%;
   margin-left: 31%;
 }
+@media only screen and (max-width: 600px) {
+  .approved-list {
+    margin-left: 3%;
+  }
+}
 </style>

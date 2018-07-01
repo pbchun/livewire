@@ -62,8 +62,6 @@ export default {
 </script>
 
 <style>
-.add-upcoming-form {
-}
 #submitButton {
   font-size: 25px;
   margin: 40px;
@@ -95,7 +93,4 @@ export default {
   justify-content: center;
   background-color: black;
 }
-</style>```
-Message Input
-
-Message Jose Trujillo, Mike Lavin, Jacob Hinkston, Peter Chun
+</style>
