@@ -9,7 +9,7 @@
         <p class="card-test">Email: {{pendingEvent.email}}</p>
         <br><img :src="pendingEvent.image">
         <div class="button-section">
-            <b-button id="white" vue-router="#" variant="secondary" @click="submitRequest">Approve</b-button>
+            <b-button id="white" vue-router="#" variant="secondary" @click="approveEvent(), clearPending()">Approve</b-button>
             <b-button id="white" vue-router="#" variant="secondary" @click="deleteEvent">Reject</b-button>
         </div>
     </b-card>
@@ -27,6 +27,8 @@ export default {
   data() {
     return {
       REQUESTED_TEMPLATE: `https://pure-taiga-70535.herokuapp.com/events/${
+        this.pendingEvent.date}`,
+      PENDING_TEMPLATE: `https://whispering-plains-35500.herokuapp.com/events/${
         this.pendingEvent.date
       }`,
       acceptedEvent: {
@@ -44,10 +46,7 @@ export default {
     };
   },
   methods: {
-    submitRequest() {
-      this.postEvent();
-    },
-    postEvent() {
+    approveEvent() {
       const postOptions = {
         method: "POST",
         body: JSON.stringify(this.acceptedEvent),
@@ -75,6 +74,17 @@ export default {
             this.pendingEvent + " was unable to be deleted..."
           );
       });
+    },
+    clearPending() {
+      console.log(this.PENDING_TEMPLATE);
+    return fetch((this.PENDING_TEMPLATE), {
+      method: "delete"
+    }).then(resJSON => {
+      console.log(this.PENDING_TEMPLATE);
+      if (resJSON.status === 204)
+        console.log("Data, ", this.pendingEvent.date, " has been deleted...");
+      else console.log("Data, ", this.pendingEvent.date + " was unable to be deleted...");
+    });
     }
   }
 };
