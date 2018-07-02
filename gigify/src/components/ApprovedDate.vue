@@ -23,16 +23,15 @@ export default {
   props: ["date"],
   data() {
     return {
-      APPROVED_TEMPLATE: `https://arcane-chamber-96667.herokuapp.com/events/${
-        date.id
-      }`
-    };
+      APPROVED_TEMPLATE: "https://arcane-chamber-96667.herokuapp.com/events/"
+    }
   },
   methods: {
     cancelEvent() {
-      return fetch(this.APPROVED_TEMPLATE, {
+      return fetch((this.APPROVED_TEMPLATE + this.date.date), {
         method: "delete"
       }).then(resJSON => {
+        console.log(this.APPROVED_TEMPLATE + this.date.date);
         if (resJSON.status === 204)
           console.log("Data, ", this.date, " has been deleted...");
         else console.log("Data, ", this.date + " was unable to be deleted...");
