@@ -32,7 +32,7 @@
                     <img src="../assets/profilePics/jacob.png">
                     <h4>Jacob Hinkston</h4>
                     <h6>Software Developer</h6>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, cupiditate laborum tempora magnam vel, odio vitae fugiat tempore dolores repudiandae sint voluptatum laboriosam. Totam, ipsa esse! Aut quas impedit voluptatum.</p>
+                    <p>Coloroado Native, Eagle Scout, Patriot, Photographer and Engineer :). I'm pretty much always on my computer making something, I have a huge passion for tech, and I love coding!</p>
                 </div>
                 <div>
                     <a href="https://github.com/jacobhinkston"><img src="../assets/gitIco.png"></a>
