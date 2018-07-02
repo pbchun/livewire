@@ -39,4 +39,4 @@ Put together a 3-5 minute presentation of your project, which should include the
 - A demo of your application
 - Everyone in your group should speak
 
-Put a link to your deployed app [here]() and links to your codebase [here]()
+Put a link to your deployed app [here](https://livewire-f9c1f.firebaseapp.com/#/) and links to your codebase [here]()
