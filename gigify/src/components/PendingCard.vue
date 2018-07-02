@@ -4,6 +4,7 @@
         <p class="mainInfo">{{pendingEvent.artist}}</p>
         <p class="mainInfo">Date: {{pendingEvent.date}}</p>
         <p class="card-test">Contact: {{pendingEvent.contactName}}</p>
+        <p class="card-test">Video: <a :href=pendingEvent.musicSample target="_blank">Link</a></p>
         <p class="card-test">Phone: {{pendingEvent.phone}}</p>
         <p class="card-test">Web: {{pendingEvent.website}}</p>
         <p class="card-test">Email: {{pendingEvent.email}}</p>

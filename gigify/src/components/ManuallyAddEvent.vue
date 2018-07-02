@@ -123,7 +123,7 @@ export default {
 #backgroundForm {
   display: flex;
   justify-content: center;
-  background-color: black;
+  background-color: transparent;
 }
 @media only screen and (max-width: 600px) {
   #addForm {

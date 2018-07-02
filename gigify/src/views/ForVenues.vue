@@ -51,6 +51,7 @@ export default {
   font-family: "Pathway Gothic One", sans-serif;
 }
 .footsticker {
+  margin-top: 29ove0px;
   margin-bottom: 0px;
   position: relative;
   bottom: 0px;

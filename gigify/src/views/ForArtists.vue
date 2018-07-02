@@ -82,7 +82,7 @@ html {
 }
 
 .foot {
-  position: relative;
+  position: absolute;
   margin-bottom: 0%;
   margin-top: 5px;
   bottom: 0px;
