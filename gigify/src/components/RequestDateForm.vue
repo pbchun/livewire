@@ -155,4 +155,10 @@ export default {
 h1 {
   color: white;
 }
+
+@media only screen and (max-width: 600px) {
+  #request {
+    width: 90%;
+  }
+}
 </style>

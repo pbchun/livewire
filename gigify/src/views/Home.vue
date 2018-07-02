@@ -16,10 +16,9 @@
       <section class='about home-section'>
         <h3>About</h3>
         <p class="about-text">
-          As venue management, you know the hassles of managing your books. You have to keep the calendar full and organized. You have to keep all contact information for the acts up to date. You also have to promote your events and the venue itself. Now you
-          have LIVEWIRE! Livewire helps venue management combine all of these steps into one easy to use application. Operators are able to display all upcoming shows, Add or remove acts, and even see acts interested in a booking. If you like the act you
-          can simply approve it and add all provided information to the schedule. Livewire is designed to reduce days without a show therefore maximizing your profits Are you an artist? LIVEWIRE also provides a convenient way to show your interest in a gig.
-          Simply select a date and provide information about the act. Livewire will take care of the rest! Fans of great acts? Check out all the venues using Livewire. Find your favorite artist at your favorite venue.
+          As venue management, you know the hassles of managing your books. You have to keep the calendar full and organized, keep all contact information for the acts up to date and promote your events and the venue itself. With LIVEWIRE, we've helped you manage this process. LIVEWIRE helps venue management combine all of these steps into one easy to use application. <br><br>Venues are able to display all upcoming shows to the public, manage event status, and even screen the acts interested in booking. If you like the act you
+          can simply approve it and all relevant information is automatically posted to your schedule, including media! LIVEWIRE is designed to reduce days without a show, therefore maximizing your profits. <br><br>Are you an artist? LIVEWIRE provides a convenient way to show your interest in a gig.
+          Simply select a date and provide information about your act. Upload embeded media of your best content to show your stuff to potential attendees. Livewire will take care of the rest. <br><br>Fan of great local acts? Check out all the venues using Livewire. Find your favorite artist at your favorite venue, or get exposed to new acts through our user-friendly interface with embedded media!
         </p>
       </section>
       <section class='high-dive home-section'>
@@ -46,6 +45,7 @@ export default {
 .home {
   font-family: "Pathway Gothic One", sans-serif;
 }
+
 .home-section {
   margin-left: 20%;
   margin-right: 20%;
@@ -88,6 +88,18 @@ export default {
     margin: 2%;
     display: flex;
     flex-direction: column;
+  }
+  .about-text {
+    padding-left: 0;
+    padding-right: 0;
+    width: 95%;
+  }
+  .slogan {
+    text-align: center;
+  }
+  .home-section {
+    margin: 3px;
+    width: 95%;
   }
 }
 </style>

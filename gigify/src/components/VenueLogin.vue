@@ -1,6 +1,6 @@
 <template>
     <div id='backgroundForm'>
-        <div id='request'>
+        <div class="request" id='request'>
             <h1>Venue Login</h1>
             <form 
             class="requestForm"
@@ -75,7 +75,7 @@ export default {
   color: white;
   width: 50%;
 }
-#request {
+.request {
   background-color: RGB(70, 68, 68);
   padding: 1% 2% 2% 2%;
   margin-top: 5%;
@@ -90,5 +90,13 @@ export default {
 
 h1 {
   color: white;
+}
+@media only screen and (max-width: 600px) {
+  #request {
+    width: 90% !important;
+  }
+  #backgroundForm {
+    margin-bottom: 74px;
+  }
 }
 </style>

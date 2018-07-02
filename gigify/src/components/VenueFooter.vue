@@ -38,6 +38,7 @@ p {
   color: white;
   margin-bottom: 0;
   margin-top: 0;
+  margin-left: 5px;
   font-size: 0.7em;
   text-align: left;
 }

@@ -62,4 +62,9 @@ export default {
   height: 50%;
   align-self: center;
 }
+@media only screen and (max-width: 600px) {
+  .approved-card {
+    width: 95%;
+  }
+}
 </style>

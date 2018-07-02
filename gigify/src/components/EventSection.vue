@@ -79,7 +79,7 @@ export default {
 <style scoped>
 #slide {
   border: none;
-  box-shadow: 3px 3px 12px #f88c19;
+  box-shadow: 5px 5px 35px black;
   border-radius: 7px;
   height: 100%;
   width: 100%;
@@ -103,7 +103,7 @@ export default {
 }
 
 .carousel-3d-container[data-v-c06c963c] {
-  padding-bottom: 30px;
+  padding-bottom: 32px;
   padding-top: 20px;
 }
 </style>

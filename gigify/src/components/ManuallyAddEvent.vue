@@ -62,69 +62,72 @@
 </template>
 
 <script>
-    export default {
-        name: "manually-add-event",
-        props: ["API"],
-        data(){
-            return{
-                event: {
-                    date: "",
-                    venue: "",
-                    artist: "",
-                    image: "",
-                    musicSample:"",
-                    description: ""
-                }
-            }
-        },
-        methods:{
-            submitEvent(){
-                this.event.venue = "*Venue name when logged in goes here*"
-                this.postEvent();
-                this.event= {
-                    date: "",
-                    venue: "",
-                    artist: "",
-                    image: "",
-                    musicSample:"",
-                    description: ""
-
-                };
-            },
-            postEvent(){
-                const postOptions = {
-                    method: 'POST',
-                    body: JSON.stringify(this.event),
-                    headers: {'Content-Type':'application/json'}
-                }
-                fetch(this.API.APPROVED_SHOWS, postOptions)
-                    .then(res => res.json())
-                    .then(resJSON => console.log(resJSON))
-            }
-        }
+export default {
+  name: "manually-add-event",
+  props: ["API"],
+  data() {
+    return {
+      event: {
+        date: "",
+        venue: "",
+        artist: "",
+        image: "",
+        musicSample: "",
+        description: ""
+      }
     };
+  },
+  methods: {
+    submitEvent() {
+      this.event.venue = "*Venue name when logged in goes here*";
+      this.postEvent();
+      this.event = {
+        date: "",
+        venue: "",
+        artist: "",
+        image: "",
+        musicSample: "",
+        description: ""
+      };
+    },
+    postEvent() {
+      const postOptions = {
+        method: "POST",
+        body: JSON.stringify(this.event),
+        headers: { "Content-Type": "application/json" }
+      };
+      fetch(this.API.APPROVED_SHOWS, postOptions)
+        .then(res => res.json())
+        .then(resJSON => console.log(resJSON));
+    }
+  }
+};
 </script>
 
 <style scoped>
-    #submitButton {
-        font-size: 25px;
-        margin: 40px;
-        border-radius: 300px;
-        background-color: #f88c19;
-        color: white;
-        width: 50%;
-    }
-    #addForm {
-        background-color: RGB(70,68,68);
-        padding: 1% 2% 2% 2%;
-        margin-top: 5%;
-        /* width: 75%; */
-        width: 50%;
-    }
-    #backgroundForm {
-        display: flex;
-        justify-content: center;
-        background-color: black;
-    }
-
+#submitButton {
+  font-size: 25px;
+  margin: 40px;
+  border-radius: 300px;
+  background-color: #f88c19;
+  color: white;
+  width: 50%;
+}
+#addForm {
+  background-color: RGB(70, 68, 68);
+  padding: 1% 2% 2% 2%;
+  margin-top: 5%;
+  /* width: 75%; */
+  width: 50%;
+}
+#backgroundForm {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+@media only screen and (max-width: 600px) {
+  #addForm {
+    width: 90%;
+  }
+}
 </style>
