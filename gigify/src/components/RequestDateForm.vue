@@ -58,6 +58,13 @@
            placeholder="Embed link from YouTube or SoundCloud"
          >
          <input
+           v-model="request.image"
+           class="form-control mb-2 mr-sm-2"
+           type="text"
+           name="image"
+           placeholder="Image (Link directly to a publicly accessible promo shot)"
+         >         
+         <input
            v-model="request.description"
            name="description"
            class="form-control mb-2 mr-sm-2"
@@ -154,5 +161,11 @@ export default {
 
 h1 {
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  #request {
+    width: 90%;
+  }
 }
 </style>

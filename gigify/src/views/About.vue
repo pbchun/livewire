@@ -3,7 +3,7 @@
         <Header />
         <div>
             <h1>MEET THE TEAM</h1>
-            <div class  ="profile-container">
+            <div class="profile-container">
                 <div class="profile">
                     <div>
                         <img src ="../assets/profilePics/reed.png">
@@ -65,47 +65,60 @@
             </div>
         </div>
     </div>
-    <VenueFooter />
+    <VenueFooter id="about-footer" />
     </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
-import VenueFooter from "@/components/VenueFooter"
+import VenueFooter from "@/components/VenueFooter";
 
 export default {
-    components: {
-        Header,
-        VenueFooter
-    }
+  components: {
+    Header,
+    VenueFooter
+  }
 };
 </script>
 
 <style scoped>
-
-
-.profile-container{
-    display:flex;
-    flex-flow:wrap;
-    background-color: black;
-    margin-top: 75px;
-    justify-content: space-around;
+.profile-container {
+  display: flex;
+  flex-flow: wrap;
+  background-color: black;
+  margin-top: 75px;
+  justify-content: space-around;
 }
-.profile{
-    border: solid  black 1px;
-    width: 18vw;
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between
-    
+.profile {
+  border: solid black 1px;
+  width: 18vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-img{
-    border-radius: 50%;
+img {
+  border-radius: 50%;
 }
 p {
-    font-size: small;
+  font-size: small;
 }
 a {
-    margin: 3%;
+  margin: 3%;
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  .profile {
+    width: 90%;
+    align-self: center;
+    margin-bottom: 15px;
+  }
+  #about-footer {
+    position: relative;
+    bottom: 0px;
+    margin-bottom: 0px;
+  }
 }
 </style>

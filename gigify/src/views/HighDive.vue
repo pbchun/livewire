@@ -2,7 +2,7 @@
   <div class="high-dive">
     <Header /> 
     <header>
-      <h1>Live at The High-Dive</h1>
+      <h1 id="live-at">Live at The Hi-Dive</h1>
     </header>
     <EventSection :modalShow="modalShow" :clickedEvent="clickedEvent" :populateModal="populateModal" :eventData="eventData" />
     <div>
@@ -57,6 +57,11 @@ export default {
 </script>
 
 <style>
+@media only screen and (max-width: 600px) {
+  #live-at {
+    letter-spacing: 0.08em;
+  }
+}
 .high-dive {
   font-family: "Pathway Gothic One", sans-serif;
 }

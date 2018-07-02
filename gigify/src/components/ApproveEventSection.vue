@@ -111,4 +111,10 @@ export default {
   font-size: 25px;
   margin: 40px;
 }
+
+@media only screen and (max-width: 600px) {
+  .add-event {
+    margin: 10px;
+  }
+}
 </style>
