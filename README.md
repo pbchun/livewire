@@ -1,42 +1,37 @@
-## Galvanize Unity
+# Livewire
 
-Working in an instructor-assigned group of 3-5 people, you will build a full-stack application. Your application should include:
+## ![](https://i.imgur.com/YuKzjtu.gif)
 
-- Front-end
-- Back-end
-- Database
-- At least one library
-- Tests
+---
 
-What the application does is up to your group!
+## [Live Site](https://livewire-f9c1f.firebaseapp.com/#/HighDive)
 
-### Before
+### The Problems:
 
-Write a proposal to the instructors using [this template](project-proposal.md). Do not start working until your project proposal is approved!
+Small venues have don't have the budget for event managers. They want the best acts to suit their venue's personality, but it's often difficult to get out there and find them.
 
-### During
+Stuggling artists also have a hard time getting opportunities at the venues they feel will give them the best possible platform.
 
-Use an agile process to complete the project. Specifically, work in _features_, not _layers_. Some common pitfalls:
+Event goers need a central location to see schedules of events at their favorite venues, along with media to determine if an event is up their alley.
 
-- Building all of the back-end, and then building all of the front-end (or vice-versa)
-- Styling everything at once at the end instead of as you're building the features
-- Not deploying until the end
-- Doing a half-baked version of every feature instead of doing complete versions of some of the features
+### The Solution:
 
-If you do this correctly, you should have something working and deployed on the first day.
+LIVEWIRE is a 3-in-1 small venue event management service, benefitting venues, artists, and event goers. Venue Management can post their available dates, then artists can request to book these dates by providing their information, including media of their act. If approved, these acts are posted publicly on the venue's event page for the world to see, along with media to promote the act. Great for comedy clubs, nightclubs, coffee shops, bars, or any business that likes to bring in talent to perform
 
-During each day of your project, you need to:
+## Installation:
 
-- Do some pair-programming
-- Hold at least one inclusive meeting, and add notes about the things you talk about and decide [here](meeting-notes.md)
-- Develop your code using a team git workflow
+> -Clone this repo.
 
-### After
+> -run `npm install`
 
-Put together a 3-5 minute presentation of your project, which should include the following:
+## Collaborators
 
-- A slide deck
-- A demo of your application
-- Everyone in your group should speak
+[Peter Chun](https://github.com/pbchun)
 
-Put a link to your deployed app [here](https://livewire-f9c1f.firebaseapp.com/#/) and links to your codebase [here]()
+[Jose Trujillo](https://github.com/trujilloj)
+
+[Reed Black](https://github.com/ReedBlack)
+
+[Mike Lavin](https://github.com/Mike82co)
+
+[Jacob Hinkston](https://github.com/JacobHinkston)
